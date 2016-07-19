@@ -1,12 +1,16 @@
+<div class= "container">
+  <h3>Edit Article </h3>
+  <div id="main-content">
 <%= form_for @article do |f| %>
+<div class="form-group">
 <%= f.label :title %>
-<%= f.text_field :title %>
+      <%= f.text_field :title, class: "form-control" %>
 <br/>
-<%= f.label :content %>
-<%= f.text_area :content, cols: 20, rows: 10 %>
+      <%= f.label :content %>
+      <%= f.text_area :content,  cols: 20, rows: 10, class: "form-control" %>
 <br/>
 
-<%= f.submit :submit %>
+<%= f.submit :submit, class: "btn btn-default" %>
 <% end %>
 
 <div>

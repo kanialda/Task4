@@ -48,6 +48,14 @@ class ArticlesController < ApplicationController
       redirect_to action: 'index'
     end
   end
+  
+  def upload
+  uploaded_io = params[:person][:picture]
+  File.open(Rails.root.join('public', 'upload_images', uploaded_io.original_filename), 'wb') do |file|
+    file.write(uploaded_io.read)
+  end
+end
+
   private
 
   def params_article
