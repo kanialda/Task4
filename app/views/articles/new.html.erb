@@ -1,17 +1,18 @@
-<%= form_for @article do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-<%= @article.errors[:title].first unless @article.errors[:title].blank? %>
-<br/>
-<%= f.label :content %>
-<%= f.text_area :content, cols: 20, rows: 10 %>
-<%= @article.errors[:content].first unless @article.errors[:content].blank? %>
-<br/>
-<%= f.label :status %>
-<%= f.radio_button :status, "active" %>
-<%= label :article_status, 'active' %>
-<%= f.radio_button :status, "off", :checked => true %>
-<%= label :article_status, 'off' %>
-<br/>
-<%= f.submit :submit %>
-<% end %>
+<h3>New Article </h3>
+<div id="main-content">
+    <%= form_for @article do |f|  %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, html: {class: "form-control"} %>
+      <%= @article.errors[:title].first unless @article.errors[:title].blank? %>
+      <br/>
+      <%= f.label :content %>
+      <%= f.text_area :content,  cols: 20, rows: 10, html: {class: "form-control"} %>
+      <%= @article.errors[:content].first unless @article.errors[:content].blank? %>
+
+      <br/>
+
+      <%= f.submit :submit, html: {class: "btn btn-default"} %>
+      <% end %>
+    </div>
+</div>
