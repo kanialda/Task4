@@ -11,5 +11,6 @@ module Task4
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    # config.paperclip_defaults = { storage: :fog, fog_credentials: { provider: "Local", local_root: "#{Rails.root}/public/upload_images"}, fog_directory: "", fog_host: "localhost:3000"}
   end
 end

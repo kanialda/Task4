@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  def new
+  def new 
     @article = Article.new
   end
 
@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
     else
       flash[:error] = "data not valid"
       render 'new'
+      
     end
   end
 
@@ -50,16 +51,17 @@ class ArticlesController < ApplicationController
   end
   
   def upload
-  uploaded_io = params[:person][:picture]
+  uploaded_io = params[:person][:avatar]
   File.open(Rails.root.join('public', 'upload_images', uploaded_io.original_filename), 'wb') do |file|
     file.write(uploaded_io.read)
+    
   end
 end
 
   private
 
   def params_article
-    params.require(:article).permit(:title, :content)
+    params.require(:article).permit(:title, :content, :avatar)
   end
 
 end

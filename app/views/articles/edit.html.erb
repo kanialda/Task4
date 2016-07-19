@@ -1,8 +1,11 @@
 <div class= "container">
   <h3>Edit Article </h3>
   <div id="main-content">
-<%= form_for @article do |f| %>
+<%= form_for @article, html: { multipart: true} do |f| %>
 <div class="form-group">
+  <%= f.label :avatar %>
+      <%= f.file_field :avatar, class: "form-control" %>
+<br/>
 <%= f.label :title %>
       <%= f.text_field :title, class: "form-control" %>
 <br/>

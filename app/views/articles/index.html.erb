@@ -1,4 +1,6 @@
-
+<h2>Make a new article <%= link_to 'New Article', new_article_path %></h2>
+<div class="grid js-masonry"
+  data-masonry-options='{ "itemSelector": ".grid-item", "columnWidth": 50 }'>
 <div class="grid">
 
   <% @articles.each do |article| %>
@@ -10,15 +12,16 @@
     <div class="article" id="<%= article.id %>">
       <div class="front">
         <%= link_to article, class: 'pic-link' do %>
-        <%= image_tag article.avatar.url(:square) %>
+        <%= image_tag article.avatar.url(:thumb) %>
         <% end %>
         <p>
-          <span><%= link_to 'edit', edit_article_path(article.id) %><span> <span> | </span> <span><%= link_to 'delete', article_path(article.id), method: "DELETE", data: {confirm: 'Delete this data ? '} %><span>
+          <span><%= link_to 'Edit', edit_article_path(article.id) %><span> <span> | </span> <span><%= link_to 'Delete', article_path(article.id), method: "DELETE", data: {confirm: 'Delete this data ? '} %><span>
         </p>
         <hr/>
       </div>
     </div>
     </div>
+    
     <% end %>
   </div>
-
+</div>
