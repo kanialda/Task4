@@ -1,18 +1,24 @@
+
 <div class="grid">
-  
-<% @articles.each do |article| %>
 
-<h3><%= article.title %></h3>
-<p><%= article.content %></p>
-<p><%= article.avatar %></p>
-<p>
-
-<span><%= link_to 'edit', edit_article_path(article.id) %><span>
-<span> | </span>
-<span><%= link_to 'delete', article_path(article.id), method: "DELETE", data: {confirm: 'Delete this data ? '} %><span>
-</p>
-
-<hr/>
-<% end %>
-</div>
+  <% @articles.each do |article| %>
+  <div class="grid-item">
+    <h3><%= article.title %></h3>
+    <p>
+      <%= article.content %>
+    </p>
+    <div class="article" id="<%= article.id %>">
+      <div class="front">
+        <%= link_to article, class: 'pic-link' do %>
+        <%= image_tag article.avatar.url(:square) %>
+        <% end %>
+        <p>
+          <span><%= link_to 'edit', edit_article_path(article.id) %><span> <span> | </span> <span><%= link_to 'delete', article_path(article.id), method: "DELETE", data: {confirm: 'Delete this data ? '} %><span>
+        </p>
+        <hr/>
+      </div>
+    </div>
+    </div>
+    <% end %>
+  </div>
 
