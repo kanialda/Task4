@@ -241,7 +241,9 @@ two columns for large devices
   padding: 10px 1%;
   margin: 20px 0px 0;
 }
-
+.grid-item img{
+  width: 100%;
+}
 .grid-item--width2 { width:  160px; }
 .grid-item--width3 { width:  240px; }
 

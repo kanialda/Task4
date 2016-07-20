@@ -6,15 +6,14 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    # binding.pry
     @article = Article.new(params_article)
-    respond_to do |format|
     if @article.save
-      format.html { redirect_to @article, notice: 'Post was succesfully created'}
-      format.json { render :show, location: @article}
+        flash[:notice] = "Success Add Records"
+        redirect_to action: 'index'
     else
-      format.html { render :new}
-      format.json { render json: @article.errors }
-    end
+        flash[:error] = "data not valid"
+        render 'new'
     end
   end
 
@@ -49,11 +48,10 @@ class ArticlesController < ApplicationController
       redirect_to action: 'index'
     end
   end
-  
+
 
   private
-  
-  def set_article
+    def set_article
       @article = Article.find(params[:id])
     end
 
