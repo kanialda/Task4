@@ -1,3 +1,15 @@
-<h3><%= @article.title %></h3>
-<p><%= @article.content %></p>
-<p><%= link_to 'back to index', articles_path %></p>
+<p id="notice">
+  <%= notice%>
+</p>
+<%= image_tag @article.image.url(:medium) %>
+<p>
+  <strong>Title :</strong>
+  <h3><%= @article.title %></h3>
+<p>
+  <%= @article.content %>
+</p>
+<p>
+  <%= link_to 'back to index', articles_path %> |
+  <%= link_to 'Edit', edit_article_path(@article) %>
+</p>
+

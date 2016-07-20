@@ -1,35 +1,36 @@
 class ArticlesController < ApplicationController
+   before_action :set_article, only: [:show, :edit, :update, :destroy]
+   
   def new 
     @article = Article.new
   end
 
   def create
     @article = Article.new(params_article)
+    respond_to do |format|
     if @article.save
-      flash[:notice] = "Success Add Records"
-      redirect_to action: 'index'
+      format.html { redirect_to @article, notice: 'Post was succesfully created'}
+      format.json { render :show, location: @article}
     else
-      flash[:error] = "data not valid"
-      render 'new'
-      
+      format.html { render :new}
+      format.json { render json: @article.errors }
+    end
     end
   end
 
   def index
     @articles = Article.all
-
   end
 
   def show
-    @article = Article.find_by_id(params[:id])
+    
   end
 
   def edit
-    @article = Article.find_by_id(params[:id])
+    
   end
 
   def update
-    @article = Article.find_by_id(params[:id])
     if @article.update(params_article)
       flash[:notice] = "Success Update Records"
       redirect_to action: 'index'
@@ -40,7 +41,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find_by_id(params[:id])
     if @article.destroy
       flash[:notice] = "Success Delete a Records"
       redirect_to action: 'index'
@@ -50,18 +50,15 @@ class ArticlesController < ApplicationController
     end
   end
   
-  def upload
-  uploaded_io = params[:person][:avatar]
-  File.open(Rails.root.join('public', 'upload_images', uploaded_io.original_filename), 'wb') do |file|
-    file.write(uploaded_io.read)
-    
-  end
-end
 
   private
+  
+  def set_article
+      @article = Article.find(params[:id])
+    end
 
   def params_article
-    params.require(:article).permit(:title, :content, :avatar)
+    params.require(:article).permit(:title, :content, :image)
   end
 
 end
