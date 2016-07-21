@@ -17,8 +17,7 @@ html {
  */
 
 body {
-  margin: 0;
-}
+  margin: 0;}
 
 /* HTML5 display definitions
    ========================================================================== */
@@ -30,8 +29,8 @@ body {
  * Correct `block` display not defined for `main` in IE 11.
  */
 /* responive column width */
-.masonry.masonry--percent-width .grid-sizer { width: 40%; }
-.masonry.masonry--percent-width .item { width: 40%; }
+.masonry.masonry--percent-width .grid-sizer { width: 50%; }
+.masonry.masonry--percent-width .item { width: 50%; }
 .masonry.masonry--percent-width .item.w2,
 .masonry.masonry--percent-width .item.w3 { width: 60%; }
 
@@ -234,18 +233,18 @@ two columns for large devices
   width: 20%;
   
   float: left;
-  background: #999999;
-  border: 0px solid #333;
+  background: #99CCFF;
+  border: 0px solid #EEDDBB;
   border-color: hsla(0, 0%, 0%, 0);
   border-radius: 10px;
-  padding: 10px 1%;
+  padding: 10px 10px 1%;
   margin: 20px 0px 0;
 }
 .grid-item img{
   width: 100%;
 }
-.grid-item--width2 { width:  160px; }
-.grid-item--width3 { width:  240px; }
+.grid-item--width2 { width:  100px; }
+.grid-item--width3 { width:  200px; }
 
 .grid-item--height2 { height: 100px; }
 .grid-item--height3 { height: 140px; }
@@ -298,3 +297,14 @@ two columns for large devices
 .grid--fluid-gutter .grid-item--width3 {
   width: 48%;
 }
+/* -------------BTN---------------- */
+.btn-new-article{color:#fff;background-color:#DD2266;border-color:#DD2266}.btn-new-article.focus,
+ .btn-new-article:focus{color:#fff;background-color:#286090;border-color:#122b40}
+ .btn-new-article:hover{color:#fff;background-color:#286090;border-color:#204d74}
+ .btn-new-article.active,.btn-new-article:active,.open>.dropdown-toggle.btn-new-article{color:#fff;background-color:#286090;border-color:#204d74}
+ .btn-new-article.active.focus,.btn-new-article.active:focus,.btn-new-article.active:hover,.btn-new-article:active.focus,.btn-new-article:active:focus,
+ .btn-new-article:active:hover,.open>.dropdown-toggle.btn-new-article.focus,.open>.dropdown-toggle.btn-new-article:focus,.open>.dropdown-toggle.btn-new-article:hover{color:#fff;background-color:#204d74;border-color:#122b40}
+ .btn-new-article.active,.btn-new-article:active,.open>.dropdown-toggle.btn-new-article{background-image:none}.btn-new-article.disabled.focus,
+ .btn-new-article.disabled:focus,.btn-new-article.disabled:hover,.btn-new-article[disabled].focus,.btn-new-article[disabled]:focus,
+ .btn-new-article[disabled]:hover,fieldset[disabled] .btn-new-article.focus,fieldset[disabled] .btn-new-article:focus,fieldset[disabled] 
+ .btn-new-article:hover{background-color:#337ab7;border-color:#2e6da4}.btn-new-article .badge{color:#337ab7;background-color:#fff}

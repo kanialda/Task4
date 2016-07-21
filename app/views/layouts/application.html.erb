@@ -6,6 +6,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <div class="navbar-container">
+    <h4>Make new article <%= link_to 'New Article', new_article_path, class:"btn btn-new-article" %></h4>
+    </div>
   </head>
 
   <body>
