@@ -12,6 +12,10 @@
       <%= f.text_area :content,  cols: 20, rows: 10, class: "form-control" %>
       <%= @article.errors[:content].first unless @article.errors[:content].blank? %>
     <br>
+    <div>
+      <%= image_tag @article.image.url, :size => "100x100" %>
+      </div>
+      <br>
       <%= f.file_field :image %>
       <%= @article.errors[:image].first unless @article.errors[:image].blank? %>
     <br>
