@@ -11,11 +11,14 @@
       <%= f.label :content %>
       <%= f.text_area :content,  cols: 20, rows: 10, class: "form-control" %>
       <%= @article.errors[:content].first unless @article.errors[:content].blank? %>
-    <br>
+    <!-- <br>
     <div>
-      <%= image_tag @article.image.url, :size => "100x100" %>
-      </div>
+      
+      </div> -->
       <br>
+      <div class="up-image">
+      <%= image_tag @article.image.url, :size => "100x100" %>
+    </div>  
       <%= f.file_field :image %>
       <%= @article.errors[:image].first unless @article.errors[:image].blank? %>
     <br>
@@ -24,3 +27,19 @@
   </div>
 </div>
 <% end %>
+<script>
+  $(document).ready(function(){
+    var preview = $(".up-image img");
+
+    $("#article_image").change(function(event){
+       var input = $(event.currentTarget);
+       var image = input[0].files[0];
+       var reader = new FileReader();
+       reader.onload = function(e){
+           image_base64 = e.target.result;
+           preview.attr("src", image_base64);
+       };
+       reader.readAsDataURL(image);
+    });
+});
+</script>

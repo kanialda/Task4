@@ -15,6 +15,21 @@
 .grid-item img{
   width: 100%;
 }
-
+.up-image img{
+  width: 100px;
+  height:100px;
+}
 /* -------------BTN---------------- */
 .btn-new-article{color:#fff;background-color:#DD2266;border-color:#DD2266}
+// Sizing
+// --------------------------------------------------
+
+// Large
+.pagination-lg {
+  @include pagination-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+}
+
+// Small
+.pagination-sm {
+  @include pagination-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+}

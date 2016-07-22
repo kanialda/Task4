@@ -18,7 +18,8 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all
+    # @articles = Article.all
+    @articles = Article.page(params[:page]).per(15)
   end
 
   def show
